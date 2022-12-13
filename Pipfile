@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 tensorflow-gpu = "*"
+flask = "*"
+gunicorn = "*"
 
 [dev-packages]
 
