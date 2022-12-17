@@ -1,11 +1,9 @@
 FROM python:3.9.12-slim
 
-RUN pip install pipenv
-
 WORKDIR /app
 COPY . /app/
 
-RUN pipenv install --system --deploy
+RUN pip install -r requirements.txt
 
 EXPOSE 4242
 
