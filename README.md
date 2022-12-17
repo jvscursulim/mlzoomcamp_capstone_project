@@ -82,6 +82,10 @@ Step 9: Change the value associated with the key `image_path` of the dictionary 
 
 #### Observation: If you want to train a model
 
+* https://www.kaggle.com/datasets/arunrk7/surface-crack-detection
+
+* Observation: Download the dataset using the link above and extract the files in `data/dataset` before start the training.
+
 Access script folder.
 ```bash
 cd script
