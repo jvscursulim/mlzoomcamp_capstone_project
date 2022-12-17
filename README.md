@@ -29,6 +29,10 @@ Step 4: Run the application with docker.
 docker run -p 4242:4242 surface_crack_detection
 ```
 
+Step 5: Put some images that you want to classify in imgs folder
+
+Step 6: Change the value associated with the key `image_path` of the dictionary assigned with the variable `img` inside `test.py` file. The new value must be the path of one of the images inside imgs folder. (Please refer to section "How to send data for the application")
+
 ### 2. Without Docker
 
 Step 1: Clone the GitHub repository with the project.
@@ -72,6 +76,10 @@ Step 7: Run the application with gunicorn.
 gunicorn --bind=0.0.0.0:4242 predict:app
 ```
 
+Step 8: Put some images that you want to classify in imgs folder
+
+Step 9: Change the value associated with the key `image_path` of the dictionary assigned with the variable `img` inside `test.py` file. The new value must be the path of one of the images inside imgs folder. (Please refer to section "How to send data for the application")
+
 #### Observation: If you want to train a model
 
 Access script folder.
@@ -85,7 +93,18 @@ python train.py
 After training process, you can build the new application following the instructions in the sections 1. Docker and 2. Without Docker.
 
 ### How to send data for the application:
-Insert text here
+
+For instance the `test.py` file.
+### Code snippet
+
+```python
+import requests
+
+img = {"image_path": "/workspaces/mlzoomcamp_capstone_project/imgs/00001.jpg"}
+
+url = "http://localhost:4242/predict"
+print(requests.post(url, json=img).json())
+```
 
 ### References:
 
